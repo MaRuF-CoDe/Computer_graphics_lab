@@ -33,15 +33,15 @@ void plotgraph(int screenWidth,int screenHeight)
 
 int main(){
 
-	int gd=DETECT,gm;
-	initgraph(&gd,&gm,"c:\\tc\\bgi");
-	setbkcolor(WHITE);
+	//int gd=DETECT,gm;
+	//initgraph(&gd,&gm,"c:\\tc\\bgi");
+	//setbkcolor(WHITE);
 
 
 	//window size measurement and initialization
 	DWORD screenWidth=GetSystemMetrics(SM_CXSCREEN);
 	DWORD screenHeight=GetSystemMetrics(SM_CYSCREEN);
-	initwindow(screenWidth,screenHeight,"",-3,-3);
+	initwindow(screenWidth,screenHeight,"Window",-3,-3);
 	
 	//graph plotting function call
 	plotgraph(screenWidth,screenHeight);
@@ -73,10 +73,10 @@ int main(){
 	{
     	cout<<p1<<"\t"<<(int) xc+x<<"\t"<<(int) yc+y<<endl;
     
-    	putpixel((screenWidth/2)+(xc+x),(screenHeight)-(yc+y),RED);
-    	putpixel((screenWidth/2)+(xc+x),(screenHeight)-(yc-y),RED);
-    	putpixel((screenWidth/2)+(xc-x),(screenHeight)-(yc+y),RED);
-    	putpixel((screenWidth/2)+(xc-x),(screenHeight)-(yc-y),RED);
+    	putpixel((screenWidth/2)+(xc+x),(screenHeight/2)-(yc+y),RED);
+    	putpixel((screenWidth/2)+(xc+x),(screenHeight/2)-(yc-y),RED);
+    	putpixel((screenWidth/2)+(xc-x),(screenHeight/2)-(yc+y),RED);
+    	putpixel((screenWidth/2)+(xc-x),(screenHeight/2)-(yc-y),RED);
     	if(p1<0){
     		x=x+1;
         	y=y;
@@ -103,10 +103,10 @@ int main(){
 	{
     	cout<<p1<<"\t"<<(int) xc+x<<"\t"<<(int) yc+y<<endl;
     
-    	putpixel((screenWidth/2)+(xc+x),(screenHeight)-(yc+y),RED);
-    	putpixel((screenWidth/2)+(xc+x),(screenHeight)-(yc-y),RED);
-    	putpixel((screenWidth/2)+(xc-x),(screenHeight)-(yc+y),RED);
-    	putpixel((screenWidth/2)+(xc-x),(screenHeight)-(yc-y),RED);
+    	putpixel((screenWidth/2)+(xc+x),(screenHeight/2)-(yc+y),RED);
+    	putpixel((screenWidth/2)+(xc+x),(screenHeight/2)-(yc-y),RED);
+    	putpixel((screenWidth/2)+(xc-x),(screenHeight/2)-(yc+y),RED);
+    	putpixel((screenWidth/2)+(xc-x),(screenHeight/2)-(yc-y),RED);
     	if(p2>0){
         	x=x;
         	y=y-1;
@@ -125,9 +125,9 @@ int main(){
 
 	}
 	
-    //outtextxy((screenWidth/2)+x0,(screenHeight/2)-y0+10, "Starting point");
-    //outtextxy((screenWidth/2)+x1+10,(screenHeight/2)-y1-10, "Ending point");
-    //outtextxy((screenWidth/2)+5,(screenHeight/2)+5, "(0,0)");
+    outtextxy((screenWidth/2)+x0,(screenHeight/2)-y0+10, "Starting point");
+    outtextxy((screenWidth/2)+x+10,(screenHeight/2)-y1-10, "Ending point");
+    outtextxy((screenWidth/2)+5,(screenHeight/2)+5, "(0,0)");
 	getch();
 	closegraph();
 }

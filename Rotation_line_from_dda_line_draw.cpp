@@ -36,15 +36,12 @@ int main(){
 	
 	//graphics driver
 	int gd=DETECT,gm;
-	initgraph(&gd,&gm,"c:\\tc\\bgi");
+	//initgraph(&gd,&gm,"c:\\tc\\bgi");
 	
 	//window size measurement and initialization
 	DWORD screenWidth=GetSystemMetrics(SM_CXSCREEN);
 	DWORD screenHeight=GetSystemMetrics(SM_CYSCREEN);
-	initwindow(screenWidth,screenHeight,"",-3,-3);
 	
-	//graph plotting function call
-	plotgraph(screenWidth,screenHeight);
 	
 	//dda algorithm
 	
@@ -55,6 +52,12 @@ int main(){
 	cin>>x1>>y1;
 	cout<<"Enter the rotation angle a: ";
 	cin>>angle;
+	
+	initwindow(screenWidth,screenHeight,"Window",3,3);
+	
+	//graph plotting function call
+	
+	plotgraph(screenWidth,screenHeight);
 	
 	radian=(3.14/180);
 	
@@ -80,13 +83,15 @@ int main(){
     
     for(int i=0;i<=step;i++)
     {
+    	
     	setcolor(GREEN);
+    	setlinestyle(0,0,6);
         putpixel((screenWidth/2)+((int) (x+0.5)),(screenHeight/2)-((int)(y+0.5)),GREEN);
         
         outtextxy((screenWidth/2)+x0,(screenHeight/2)-y0+10, "original line");
         
-        setcolor(BLUE);
-        putpixel((screenWidth/2)+(((int) (x+0.5))*cos(angle*radian)-((int)(y+0.5))*sin(angle*radian)),(screenHeight/2)-(((int) (x+0.5))*sin(angle*radian)+((int)(y+0.5))*cos(angle*radian)),BLUE); //rotation with rotatin angle
+        setcolor(YELLOW);
+        putpixel((screenWidth/2)+(((int) (x+0.5))*cos(angle*radian)-((int)(y+0.5))*sin(angle*radian)),(screenHeight/2)-(((int) (x+0.5))*sin(angle*radian)+((int)(y+0.5))*cos(angle*radian)),YELLOW); //rotation with rotatin angle
         outtextxy((screenWidth/2)+(((int) (x1+0.5))*cos(angle*radian)-((int)(y1+0.5))*sin(angle*radian)),(screenHeight/2)-(((int) (x1+0.5))*sin(angle*radian)+((int)(y1+0.5))*cos(angle*radian)), "rotated line");
         
         outtextxy((screenWidth/2)+5,(screenHeight/2)+5, "(0,0)");

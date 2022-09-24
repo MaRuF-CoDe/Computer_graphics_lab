@@ -61,6 +61,7 @@ int main(){
     yc=-yc;
     
     setcolor(GREEN);
+    setlinestyle(0,0,6);
 	circle((screenWidth/2)+xc,(screenHeight/2)-yc,r);    
     outtextxy((screenWidth/2)+xc+10,(screenHeight/2)-yc-10, "x-axis reflection");
     outtextxy((screenWidth/2)+5,(screenHeight/2)+5, "(0,0)");

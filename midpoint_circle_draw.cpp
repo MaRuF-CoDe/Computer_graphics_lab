@@ -40,7 +40,7 @@ int main(){
 	//window size measurement and initialization
 	DWORD screenWidth=GetSystemMetrics(SM_CXSCREEN);
 	DWORD screenHeight=GetSystemMetrics(SM_CYSCREEN);
-	initwindow(screenWidth,screenHeight,"",-3,-3);
+	initwindow(screenWidth,screenHeight,"Window",-3,-3);
 	
 	//graph plotting function call
 	plotgraph(screenWidth,screenHeight);
@@ -69,7 +69,7 @@ int main(){
     
     while(x<=y)
     {
-    
+    	setlinestyle(0,0,2);  //line thickness increase
         putpixel((screenWidth/2)+(xc+x),(screenHeight/2)-(yc+y),GREEN);
         putpixel((screenWidth/2)+(xc+x),(screenHeight/2)-(yc-y),GREEN);
         putpixel((screenWidth/2)+(xc-x),(screenHeight/2)-(yc+y),GREEN);

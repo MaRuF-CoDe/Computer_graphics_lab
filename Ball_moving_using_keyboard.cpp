@@ -5,7 +5,7 @@ using namespace std;
 int screenWidth = GetSystemMetrics(SM_CXSCREEN);
 int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-void countm(int co_mo,int inc) // co_mo : count move
+void countm(int *co_mo,int *inc) // co_mo : count move
 {
     *inc+=5;
     settextstyle(0,HORIZ_DIR,0);
